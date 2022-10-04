@@ -1,0 +1,22 @@
+version: "3.9"
+services:
+  app: 
+    env_file: .env
+    image: node:alpine3.15
+    restart: always
+    volumes: 
+      - ./app:/home/node/app
+    working_dir: /home/node/app
+    command: >
+      sh -c "yarn install && yarn build && ./scripts/start.sh"
+
+  worker: 
+    image: node:alpine3.15
+    env_file: .env
+    depends_on:
+      - app
+    volumes:
+      - ./worker:/home/node/worker
+    working_dir: /home/node/worker
+    command: >
+      sh -c "yarn install && yarn build && ./scripts/start.sh"

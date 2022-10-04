@@ -1,0 +1,23 @@
+{
+  "name": "worker",
+  "license": "MIT",
+  "packageManager": "yarn@3.2.3",
+  "scripts": {
+    "dev": "concurrently -k \"yarn build:watch\" \"yarn start:dev\"",
+    "start": "node dist/index.js",
+    "start:dev": "nodemon dist/index.js",
+    "build": "tsc",
+    "build:watch": "tsc -w"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "node-schedule": "^2.1.0",
+    "telegraf": "^4.10.0",
+    "typescript": "^4.8.4"
+  },
+  "devDependencies": {
+    "@types/node-schedule": "^2.1.0",
+    "concurrently": "^7.4.0",
+    "nodemon": "^2.0.20"
+  }
+}

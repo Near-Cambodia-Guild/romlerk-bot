@@ -1,0 +1,11 @@
+.git
+node_modules
+dist
+
+# yarn
+.yarn/*
+!.yarn/patches
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
