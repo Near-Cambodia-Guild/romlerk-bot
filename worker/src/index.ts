@@ -156,8 +156,8 @@ const sendAllResponse = () => {
     
                     // <b>${i.name} To-dos:</b>\n${filterArr.map((i: any) => `${(i.checked) ? '[x]' : '[ ]'} ${i.text}\n`)}
                     const message = `
-                    <b>${i.name} To-dos:</b>\n ${filterArr.map((i: any) => { 
-                        return `${(i.checked) ? '[x]' : '[ ]'} ${i.text}\n`
+                    =================\n<b>${i.name} To-dos:</b>\n ${filterArr.map((i: any) => { 
+                        return `${(i.checked) ? '✅' : '[ ]'} ${i.text}\n`
                     })}
                     `;
                     
