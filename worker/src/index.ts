@@ -70,7 +70,7 @@ const sendReminderAlert = () => {
                     if(filter.length === 0) 
                         tg.sendMessage(
                             groupID, 
-                            `Please update your task @ ${i.name}`,
+                            `You are late.😡\nPlease update your task @${i.name}`,
                             {   
                                 reply_markup: {
                                     inline_keyboard: [
@@ -79,7 +79,8 @@ const sendReminderAlert = () => {
                                             url: "https://radical-rocket-3f0.notion.site/ac7d5125e0eb4fe58cf8e23bc53c56f1?v=724e4384cd514d8cbb0a35de9f134746" 
                                         }]
                                     ]
-                                }
+                                },
+                                parse_mode: 'HTML'
                             }
                         );
                     
@@ -156,7 +157,7 @@ const sendAllResponse = () => {
     
                     // <b>${i.name} To-dos:</b>\n${filterArr.map((i: any) => `${(i.checked) ? '[x]' : '[ ]'} ${i.text}\n`)}
                     const message = `
-                    =================\n<b>${i.name} To-dos:</b>\n ${filterArr.map((i: any) => { 
+                    =================\n<b>@${i.name} To-dos:</b>\n ${filterArr.map((i: any) => { 
                         return `${(i.checked) ? '✅' : '[ ]'} ${i.text}\n`
                     })}
                     `;
