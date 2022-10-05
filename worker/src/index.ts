@@ -154,12 +154,12 @@ const sendAllResponse = () => {
                         return obj.text !== undefined
                     })
     
+                    // <b>${i.name} To-dos:</b>\n${filterArr.map((i: any) => `${(i.checked) ? '[x]' : '[ ]'} ${i.text}\n`)}
                     const message = `
-                        <b>${i.name} To-dos:</b>\n${filterArr.map((i: any) =>
-                            `${(i.checked) ? '[x]' : '[ ]'} ${i.text}\n`
-                        )}
+                    <b>${i.name} To-dos:</b>\n ${filterArr.map((i: any) => { 
+                        return `${(i.checked) ? '[x]' : '[ ]'} ${i.text}\n`
+                    })}
                     `;
-                    console.log(filterArr);
                     
                     tg.sendMessage(groupID , message, {parse_mode: 'HTML'});
                 })
