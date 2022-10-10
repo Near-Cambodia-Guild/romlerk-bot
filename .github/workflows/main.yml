@@ -15,6 +15,7 @@ jobs:
 
       - name: List files in the repository
         run: |
+          npm install worker/
           node worker/dist/morning.js
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
