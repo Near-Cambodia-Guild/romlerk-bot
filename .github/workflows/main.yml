@@ -10,8 +10,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Every time
-        run: echo ${PATH}
+      - name: Pnstall Packages
+        run: npm install
 #         env:
 #           DEFAULT_BRANCH: main
 #           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
