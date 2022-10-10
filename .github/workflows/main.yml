@@ -1,11 +1,20 @@
-name: Scheduled Job
-on: push
+Name: Starter Workflow Demo
+
+on:
+  push:
+    branches: [ $default-branch ]
+  pull_request:
+    branches: [ $default-branch ]
+
 jobs:
-  my_first_job:
+  build:
+    runs-on: ubuntu-latest
+
     steps:
-      - name: Display the path
+      - uses: actions/checkout@v3
+
+      - name: demo workflow job
         run: echo $PATH
-        shell: bash
 
 # on:
 #   schedule:
