@@ -10,8 +10,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Run PWD
-         usd: pwd 
+      - name: Every time
+        run: echo "This step will always run" 
 #         env:
 #           DEFAULT_BRANCH: main
 #           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
