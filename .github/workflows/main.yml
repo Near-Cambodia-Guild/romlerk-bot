@@ -10,12 +10,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - uses: actions/setup-node@v2
-#         with:
-#           node-version: "18"
+        with:
+          node-version: "18"
 
       - name: List files in the repository
         run: |
-          node morning.js
+          node worker/dist/morning.js
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
 #         env:
