@@ -17,7 +17,9 @@ jobs:
         run: |
           npm install worker/
           node worker/dist/morning.js
-          ls ${{ github.workspace }}
+          env:
+              DEFAULT_BRANCH: main
+              BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
 #         env:
 #           DEFAULT_BRANCH: main
