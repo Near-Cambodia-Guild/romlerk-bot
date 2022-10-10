@@ -1,17 +1,24 @@
 name: Scheduled Job
-
-on:
-  schedule:
-    - cron: "* * * * *"
-
+on: push
 jobs:
-  scheduled-job:
-    runs-on: ubuntu-latest
+  my_first_job:
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: "18"
-      - run: pwd
+      - name: Display the path
+        run: echo $PATH
+        shell: bash
+
+# on:
+#   schedule:
+#     - cron: "* * * * *"
+
+# jobs:
+#   scheduled-job:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v2
+#       - uses: actions/setup-node@v2
+#         with:
+#           node-version: "18"
+#       - run: pwd
 #       - run: npm install
 #       - run: node ./worker/dist/noon.js
