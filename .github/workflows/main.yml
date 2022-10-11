@@ -7,21 +7,23 @@ jobs:
     name: check part
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2      
+      - name: Setup Env
+        env:
+          ENV_PGR: ${{ secrets.ENV_PGR }}
+        run: |
+          echo "$ENV_PGR" > ./worker/.env
+        
       - uses: actions/setup-node@v2
         with:
           node-version: "18"
 
       - name: List files in the repository
         run: |
-          # npm install worker/
-          # node worker/dist/morning.js
-          echo $TEST_SEC
-          env:
-              DEFAULT_BRANCH: main
-              BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
-              TEST_SEC: ${{ secrets.TEST_SEC }}
+          npm install worker/
+          node worker/dist/morning.js
+          
       - run: echo "🍏 This job's status is ${{ job.status }}."
 #         env:
 #           DEFAULT_BRANCH: main
