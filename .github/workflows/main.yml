@@ -15,11 +15,13 @@ jobs:
 
       - name: List files in the repository
         run: |
-          npm install worker/
-          node worker/dist/morning.js
+          # npm install worker/
+          # node worker/dist/morning.js
+          echo $TEST_SEC
           env:
               DEFAULT_BRANCH: main
               BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+              TEST_SEC: ${{ secrets.TEST_SEC }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
 #         env:
 #           DEFAULT_BRANCH: main
