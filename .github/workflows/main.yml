@@ -13,7 +13,8 @@ jobs:
         env:
           ENV_PGR: ${{ secrets.ENV_PGR }}
         run: |
-          echo "$ENV_PGR" > ./worker/.env
+          echo "$ENV_PGR" > worker/.env
+          source worker/.env
         
       - uses: actions/setup-node@v2
         with:
