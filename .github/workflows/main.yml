@@ -22,6 +22,7 @@ jobs:
 
       - name: List files in the repository
         run: |
+          ls ${{ github.workspace }}
           npm install worker/
           node worker/dist/morning.js
           
